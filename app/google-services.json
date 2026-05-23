@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "285256052591",
+    "project_id": "kamahub-app-2026",
+    "storage_bucket": "kamahub-app-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285256052591:android:62f0bbde683507e009029a",
+        "android_client_info": {
+          "package_name": "com.example.kemahub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNNIhExg_S2nSbwCVBVpHRJJGCeyPSzfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

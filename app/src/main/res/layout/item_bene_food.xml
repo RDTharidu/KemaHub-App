@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_food_card"
+    android:gravity="center"
+    android:padding="15dp"
+    android:layout_margin="10dp"> <ImageView
+    android:id="@+id/ivBeneFoodImg"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:src="@drawable/logo"
+    android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/tvBeneFoodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food Name"
+        android:textStyle="bold"
+        android:textColor="#457B9D"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:maxLines="1"/>
+
+    <TextView
+        android:id="@+id/tvBeneViewDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Details"
+        android:textSize="12sp"
+        android:textColor="#457B9D"
+        android:layout_marginTop="5dp"/>
+</LinearLayout>

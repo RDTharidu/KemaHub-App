@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEDDB">
+
+    <RelativeLayout android:id="@+id/bottom_nav_container" android:layout_width="match_parent" android:layout_height="70dp" android:layout_alignParentBottom="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:layout_alignParentBottom="true" android:background="@drawable/bg_bottom_nav" android:orientation="horizontal" android:gravity="center" android:weightSum="4">
+            <ImageView android:id="@+id/navHome" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_menu_myplaces" app:tint="#BDBDBD"/>
+
+            <ImageView android:id="@+id/navHistory" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_menu_agenda" app:tint="#FFB771"/>
+
+            <ImageView android:id="@+id/navNotifications" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_popup_reminder" app:tint="#BDBDBD"/>
+            <ImageView android:id="@+id/navSettings" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_menu_manage" app:tint="#BDBDBD"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@id/bottom_nav_container">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="25dp">
+
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
+                <ImageView android:id="@+id/btnBack" android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_arrow_back" app:tint="#1A1A1A"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="My Claimed Donation" android:layout_toEndOf="@id/btnBack" android:layout_marginStart="15dp" android:textStyle="bold" android:textSize="22sp"/>
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBeneClaimedDonations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Theme.MaterialComponents.DayNight.NoActionBar කියන එකෙන් තමයි උඩ තියෙන දම් පාට කෑල්ල අයින් කරන්නේ -->
+    <style name="Theme.KemaHub" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- ඇප් එකේ ප්‍රධාන වර්ණ -->
+        <item name="colorPrimary">@color/primary_orange</item>
+        <item name="colorPrimaryVariant">@color/dark_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- ෆෝන් එකේ බැටරිය, සිග්නල් පෙන්වන උඩම තීරුවේ පාටත් තැඹිලි පාට කරනවා -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/primary_orange</item>
+
+    </style>
+</resources>

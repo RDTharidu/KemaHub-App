@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEDDB">
+
+    <RelativeLayout
+        android:id="@+id/bottom_nav_container"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:layout_alignParentBottom="true" android:background="@drawable/bg_bottom_nav" android:orientation="horizontal" android:gravity="center" android:weightSum="4">
+            <ImageView android:id="@+id/navHome" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_menu_myplaces" app:tint="#BDBDBD"/>
+
+            <ImageView android:id="@+id/navHistory" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_menu_agenda" app:tint="#BDBDBD"/>
+
+            <ImageView android:id="@+id/navNotifications" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_popup_reminder" app:tint="#BDBDBD"/>
+            <ImageView android:id="@+id/navSettings" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_menu_manage" app:tint="#BDBDBD"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_nav_container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="25dp"
+            android:paddingBottom="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="40dp">
+
+                <ImageView android:id="@+id/btnBack" android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_arrow_back" android:layout_centerVertical="true" app:tint="#1A1A1A"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Donation Details" android:textSize="24sp" android:textStyle="bold" android:textColor="#1A1A1A" android:layout_toEndOf="@id/btnBack" android:layout_marginStart="15dp" android:layout_centerVertical="true"/>
+
+                <ImageView android:layout_width="45dp" android:layout_height="45dp" android:src="@drawable/logo" android:layout_alignParentEnd="true" android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_claimed_card"
+                android:gravity="center"
+                android:paddingVertical="35dp"
+                android:paddingHorizontal="25dp">
+
+                <ImageView
+                    android:id="@+id/ivDetailFoodImg"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/logo"
+                    android:scaleType="centerCrop"/>
+
+                <TextView
+                    android:id="@+id/tvDetailFoodName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Food Name"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textColor="@color/dark_blue"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/tvDetailFoodDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Details will appear here"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:textColor="#666666"
+                    android:lineSpacingExtra="5dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="How much food do you need?" android:textColor="@color/dark_blue" android:textStyle="bold" android:textSize="15sp" android:layout_marginTop="30dp" android:layout_marginBottom="10dp"/>
+
+                <EditText
+                    android:id="@+id/etRequestQty"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/bg_white_input"
+                    android:paddingHorizontal="15dp"
+                    android:inputType="number"
+                    android:hint="Eg: 2"
+                    android:textColorHint="#A0A0A0"
+                    android:textColor="@color/dark_blue"
+                    android:layout_marginBottom="25dp"/>
+
+                <TextView
+                    android:id="@+id/btnConfirmRequest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_yellow_btn"
+                    android:text="Confirm Request"
+                    android:textColor="@color/dark_blue"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingHorizontal="35dp"
+                    android:paddingVertical="12dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

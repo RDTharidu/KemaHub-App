@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEDDB">
+
+    <RelativeLayout
+        android:id="@+id/bottom_nav_container"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentBottom="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:layout_alignParentBottom="true" android:background="@drawable/bg_bottom_nav" android:orientation="horizontal" android:gravity="center" android:weightSum="5">
+            <ImageView android:id="@+id/navHome" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_menu_myplaces" app:tint="#BDBDBD"/>
+            <ImageView android:id="@+id/navHistory" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_menu_agenda" app:tint="#BDBDBD"/>
+            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"/>
+            <ImageView android:id="@+id/navNotifications" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_popup_reminder" app:tint="#BDBDBD"/>
+            <ImageView android:id="@+id/navSettings" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_menu_manage" app:tint="#BDBDBD"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/fabAddDonation"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_circle_black"
+            android:src="@android:drawable/ic_input_add"
+            android:padding="15dp"
+            app:tint="@color/white"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_nav_container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="30dp"
+            android:paddingBottom="30dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp">
+                <ImageView android:id="@+id/iconMenu" android:layout_width="30dp" android:layout_height="30dp" android:src="@android:drawable/ic_menu_sort_by_size" android:layout_centerVertical="true" app:tint="#1A1A1A"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add Donation" android:textSize="26sp" android:textStyle="bold" android:textColor="#1A1A1A" android:layout_toEndOf="@id/iconMenu" android:layout_marginStart="15dp" android:layout_centerVertical="true"/>
+                <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/logo" android:layout_alignParentEnd="true" android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_image_box"
+                android:layout_marginBottom="25dp"
+                android:elevation="2dp">
+                <ImageView
+                    android:id="@+id/ivFoodImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@android:drawable/ic_menu_camera"
+                    android:scaleType="centerInside"
+                    android:padding="20dp"
+                    app:tint="#666666"/>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/etFoodName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_donation_input"
+                android:hint="Food Name"
+                android:textColorHint="@color/dark_blue"
+                android:textColor="@color/dark_blue"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="16sp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Food Category" android:textColor="@color/dark_blue" android:textSize="16sp" android:layout_marginBottom="8dp" android:textStyle="bold"/>
+            <RadioGroup
+                android:id="@+id/rgCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_donation_input"
+                android:padding="10dp"
+                android:layout_marginBottom="15dp">
+                <RadioButton android:id="@+id/rbCooked" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cooked Food" android:buttonTint="@color/dark_blue" android:textColor="@color/dark_blue"/>
+                <RadioButton android:id="@+id/rbDry" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dry Food" android:buttonTint="@color/dark_blue" android:textColor="@color/dark_blue"/>
+                <RadioButton android:id="@+id/rbFruit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fruit / Bakery" android:buttonTint="@color/dark_blue" android:textColor="@color/dark_blue"/>
+            </RadioGroup>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_donation_input"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="15dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Quantity" android:textColor="@color/dark_blue" android:textSize="16sp" android:layout_centerVertical="true" android:textStyle="bold"/>
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:gravity="center">
+                    <TextView android:id="@+id/btnQtyMinus" android:layout_width="35dp" android:layout_height="35dp" android:text="-" android:textSize="24sp" android:textColor="#666666" android:textStyle="bold" android:gravity="center"/>
+                    <TextView android:id="@+id/tvQuantityCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:textSize="18sp" android:textColor="@color/dark_blue" android:textStyle="bold" android:layout_marginHorizontal="15dp"/>
+                    <TextView android:id="@+id/btnQtyPlus" android:layout_width="35dp" android:layout_height="35dp" android:text="+" android:textSize="20sp" android:textColor="#666666" android:textStyle="bold" android:gravity="center"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/etPickupLocation"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_donation_input"
+                android:hint="Pickup Location"
+                android:textColorHint="@color/dark_blue"
+                android:textColor="@color/dark_blue"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/etNote"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_donation_input"
+                android:hint="Add a Note"
+                android:textColorHint="@color/dark_blue"
+                android:textColor="@color/dark_blue"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/etContact"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_donation_input"
+                android:hint="Contact"
+                android:inputType="phone"
+                android:textColorHint="@color/dark_blue"
+                android:textColor="@color/dark_blue"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="25dp"
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/btnPostDonation"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_yellow_btn"
+                android:text="Post Donation"
+                android:textAllCaps="false"
+                android:textColor="@color/dark_blue"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

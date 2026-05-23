@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEDDB">
+
+    <RelativeLayout
+        android:id="@+id/bottom_nav_container"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentBottom="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:layout_alignParentBottom="true" android:background="@drawable/bg_bottom_nav" android:orientation="horizontal" android:gravity="center" android:weightSum="5">
+            <ImageView android:id="@+id/navHome" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_menu_myplaces" app:tint="#BDBDBD"/>
+            <ImageView android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_menu_agenda" app:tint="#BDBDBD"/>
+            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"/>
+            <ImageView android:id="@+id/navNotifications" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_popup_reminder" app:tint="#BDBDBD"/>
+            <ImageView android:id="@+id/navSettings" android:layout_width="0dp" android:layout_height="24dp" android:layout_weight="1" android:src="@android:drawable/ic_menu_manage" app:tint="#BDBDBD"/>
+        </LinearLayout>
+        <ImageView android:id="@+id/btnAddDonation" android:layout_width="60dp" android:layout_height="60dp" android:layout_centerHorizontal="true" android:layout_alignParentTop="true" android:background="@drawable/bg_circle_black" android:src="@android:drawable/ic_input_add" android:padding="15dp" app:tint="@color/white"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_nav_container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="25dp"
+            android:paddingBottom="30dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+                <ImageView android:id="@+id/btnBack" android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_arrow_back" android:layout_centerVertical="true" app:tint="#1A1A1A"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Active Donation" android:textSize="26sp" android:textStyle="bold" android:textColor="#1A1A1A" android:layout_toEndOf="@id/btnBack" android:layout_marginStart="15dp" android:layout_centerVertical="true"/>
+                <ImageView android:layout_width="45dp" android:layout_height="45dp" android:src="@drawable/logo" android:layout_alignParentEnd="true" android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:background="@drawable/bg_white_card" android:layout_marginTop="25dp" android:gravity="center_vertical" android:paddingHorizontal="15dp">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_search" app:tint="#004D40"/>
+                <EditText android:id="@+id/etSearchFood" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@null" android:hint="Search food . . ." android:layout_marginStart="10dp" android:textSize="16sp"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="20dp">
+                <TextView android:id="@+id/btnCookedFood" android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp" android:background="@drawable/bg_white_card" android:text="Cooked" android:textColor="#004D40" android:textStyle="bold" android:gravity="center" android:layout_marginEnd="5dp"/>
+                <TextView android:id="@+id/btnDryFood" android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp" android:background="@drawable/bg_white_card" android:text="Dry Food" android:textColor="#004D40" android:textStyle="bold" android:gravity="center" android:layout_marginHorizontal="5dp"/>
+                <TextView android:id="@+id/btnFruitBakery" android:layout_width="0dp" android:layout_weight="1" android:layout_height="40dp" android:background="@drawable/bg_white_card" android:text="Bakery" android:textColor="#004D40" android:textStyle="bold" android:gravity="center" android:layout_marginStart="5dp"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvActiveDonations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
