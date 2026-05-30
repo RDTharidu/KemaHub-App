@@ -119,7 +119,7 @@ class HistoryAdapter(
         notifyDataSetChanged()
     }
 
-    // මෙතන තමයි එරර් එක තිබ්බේ. මම ඒ අවුල් පේළිය අයින් කළා.
+
     fun deleteSelectedItems() {
         if (selectedItemsIds.isEmpty()) return
         val dbRef = FirebaseDatabase.getInstance().getReference("Donations")

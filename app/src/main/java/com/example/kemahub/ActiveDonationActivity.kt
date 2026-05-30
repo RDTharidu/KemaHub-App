@@ -76,7 +76,7 @@ class ActiveDonationActivity : AppCompatActivity() {
     }
 
     private fun toggleCategory(category: String) {
-        // එකම කැටගරි එක ආයේ එබුවොත් ෆිල්ටර් එක අයින් කරනවා
+
         selectedCategory = if (selectedCategory == category) "" else category
         filterData()
     }
@@ -105,7 +105,7 @@ class ActiveDonationActivity : AppCompatActivity() {
                             foodListAll.add(item)
                         }
                     }
-                    filterData() // දත්ත ආවම ෆිල්ටර් ලොජික් එක රන් කරනවා
+                    filterData()
                 }
             }
             override fun onCancelled(error: DatabaseError) {
@@ -114,7 +114,7 @@ class ActiveDonationActivity : AppCompatActivity() {
         })
     }
 
-    // සර්ච් එකයි කැටගරි එකයි දෙකම එකතු කරලා ෆිල්ටර් කරන මැජික් ෆන්ක්ෂන් එක
+
     private fun filterData() {
         foodListDisplay.clear()
         for (item in foodListAll) {

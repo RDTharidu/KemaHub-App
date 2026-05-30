@@ -58,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         val userId = auth.currentUser?.uid
                         if (userId != null) {
-                            // 🔴 ලොග් වුණාම ඩේටාබේස් එකෙන් Role එක අරන් බලනවා
+
                             FirebaseDatabase.getInstance().getReference("Users").child(userId)
                                 .get().addOnSuccessListener { snapshot ->
                                     val role = snapshot.child("role").getValue(String::class.java)
@@ -72,7 +72,7 @@ class LoginActivity : AppCompatActivity() {
                                     }
                                     finish()
                                 }.addOnFailureListener {
-                                    // අවුලක් ගියොත් සාමාන්‍ය විදිහට Donor කෙනෙක් වගේ යවනවා
+
                                     startActivity(Intent(this, DonorDashboardActivity::class.java))
                                     finish()
                                 }

@@ -24,7 +24,7 @@ class DonationHistoryActivity : AppCompatActivity() {
     private lateinit var historyAdapter: HistoryAdapter
     private lateinit var dbRef: DatabaseReference
 
-    // Selection UI අඳුරගැනීම
+
     private lateinit var llNormalHeader: LinearLayout
     private lateinit var llSelectionHeader: LinearLayout
     private lateinit var tvSelectionCount: TextView
@@ -83,7 +83,7 @@ class DonationHistoryActivity : AppCompatActivity() {
 
         rvHistoryDonations.adapter = historyAdapter
 
-        // සිලෙක්ට් කරපුවා මකන බොත්තම
+
         ivDeleteSelected.setOnClickListener {
             val selectedCount = historyAdapter.getSelectedCount()
             if (selectedCount > 0) {
@@ -91,7 +91,7 @@ class DonationHistoryActivity : AppCompatActivity() {
             }
         }
 
-        // සිලෙක්ට් Mode එක වහන බොත්තම
+
         ivCloseSelection.setOnClickListener {
             historyAdapter.clearSelection()
         }

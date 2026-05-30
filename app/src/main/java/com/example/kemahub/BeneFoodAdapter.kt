@@ -28,20 +28,20 @@ class BeneFoodAdapter(private val donationList: List<DonationModel>) : RecyclerV
 
         holder.tvFoodName.text = donation.foodName
 
-        // Base64 අකුරු ටික ආයේ ෆොටෝ එකක් කරනවා
+
         if (!donation.imageBase64.isNullOrEmpty()) {
             try {
                 val decodedString = Base64.decode(donation.imageBase64, Base64.DEFAULT)
                 val decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
                 holder.ivFoodImg.setImageBitmap(decodedByte)
             } catch (e: Exception) {
-                holder.ivFoodImg.setImageResource(R.drawable.logo) // අවුලක් ගියොත් logo එක පෙන්නනවා
+                holder.ivFoodImg.setImageResource(R.drawable.logo)
             }
         } else {
-            holder.ivFoodImg.setImageResource(R.drawable.logo) // ෆොටෝ එකක් නැත්නම් logo එක පෙන්නනවා
+            holder.ivFoodImg.setImageResource(R.drawable.logo)
         }
 
-        // View Details එබුවම මේ අලුත් පිටුවට යනවා (දත්ත ටිකත් අරගෙනම)
+
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, BeneDonationDetailsActivity::class.java)
             intent.putExtra("id", donation.id)

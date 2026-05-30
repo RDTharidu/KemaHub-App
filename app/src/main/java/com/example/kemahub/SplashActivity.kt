@@ -16,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             val currentUser = FirebaseAuth.getInstance().currentUser
 
-            // 🔴 කලින් ලොග් වෙලා ඉන්නවනම් Auto Login වෙනවා
+
             if (currentUser != null) {
                 FirebaseDatabase.getInstance().getReference("Users").child(currentUser.uid)
                     .get().addOnSuccessListener { snapshot ->
@@ -32,7 +32,7 @@ class SplashActivity : AppCompatActivity() {
                         finish()
                     }
             } else {
-                // ලොග් වෙලා නැත්නම් Login එකට යනවා
+
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }

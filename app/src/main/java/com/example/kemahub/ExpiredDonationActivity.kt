@@ -24,10 +24,10 @@ class ExpiredDonationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_expired_donation)
 
-        // Back බොත්තම
+
         findViewById<ImageView>(R.id.btnBack)?.setOnClickListener { finish() }
 
-        // Bottom Navigation මෙනු එක වැඩ කරන්න ලියපු කෝඩ් ටික
+
         findViewById<ImageView>(R.id.navHome)?.setOnClickListener {
             startActivity(Intent(this, DonorDashboardActivity::class.java))
             finish()
@@ -48,12 +48,12 @@ class ExpiredDonationActivity : AppCompatActivity() {
             startActivity(Intent(this, AddDonationActivity::class.java))
         }
 
-        // Setup RecyclerView
+
         rvExpiredDonations = findViewById(R.id.rvExpiredDonations)
         rvExpiredDonations.layoutManager = GridLayoutManager(this, 2)
 
         foodList = ArrayList()
-        // HistoryAdapter එකම පාවිච්චි කරනවා (මොකද ඒකේ Request බොත්තම හැංගිලා තියෙන්නේ)
+
         historyAdapter = HistoryAdapter(foodList)
         rvExpiredDonations.adapter = historyAdapter
 
@@ -69,7 +69,7 @@ class ExpiredDonationActivity : AppCompatActivity() {
                     for (donationSnap in snapshot.children) {
                         val status = donationSnap.child("status").getValue(String::class.java) ?: ""
 
-                        // Status එක "Expired" (කල් ඉකුත් වූ) ඒවා විතරක් පෙන්නනවා!
+
                         if (status == "Expired") {
                             val foodName = donationSnap.child("foodName").getValue(String::class.java) ?: "Unknown"
                             val location = donationSnap.child("pickupLocation").getValue(String::class.java) ?: ""

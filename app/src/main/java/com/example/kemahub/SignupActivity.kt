@@ -53,13 +53,13 @@ class SignupActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // අලුත් Account එක හදනවා
+
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         val userId = auth.currentUser?.uid
                         if (userId != null) {
-                            // 🔴 මැජික් එක: ඩේටාබේස් එකේ "Donor" කියලා සේව් කරනවා
+
                             val userMap = hashMapOf(
                                 "name" to name,
                                 "email" to email,

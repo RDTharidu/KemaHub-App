@@ -38,14 +38,14 @@ class BeneDonationDetailsActivity : AppCompatActivity() {
             finish()
         }
 
-        // View IDs අඳුරගැනීම
+
         val ivFoodImg = findViewById<ImageView>(R.id.ivDetailFoodImg)
         val tvFoodName = findViewById<TextView>(R.id.tvDetailFoodName)
         val tvFoodDesc = findViewById<TextView>(R.id.tvDetailFoodDesc)
         val etRequestQty = findViewById<EditText>(R.id.etRequestQty)
         val btnConfirmRequest = findViewById<TextView>(R.id.btnConfirmRequest)
 
-        // අර කලින් පිටුවෙන් (Adapter එකෙන්) එවන දත්ත ගන්නවා
+
         donationId = intent.getStringExtra("id") ?: ""
         val foodName = intent.getStringExtra("name") ?: "Food Name"
         val qty = intent.getStringExtra("qty") ?: "0"
@@ -53,11 +53,11 @@ class BeneDonationDetailsActivity : AppCompatActivity() {
         val contact = intent.getStringExtra("contact") ?: "Unknown"
         val imageBase64 = intent.getStringExtra("image") ?: ""
 
-        // දත්ත ටික ස්ක්‍රීන් එකේ පෙන්වනවා
+
         tvFoodName.text = foodName
         tvFoodDesc.text = "$qty Portions Available\nPickup Location - $location\nContact - $contact"
 
-        // Base64 ෆොටෝ එක පෙන්වනවා
+
         if (imageBase64.isNotEmpty()) {
             try {
                 val decodedString = Base64.decode(imageBase64, Base64.DEFAULT)
@@ -68,7 +68,7 @@ class BeneDonationDetailsActivity : AppCompatActivity() {
             }
         }
 
-        // Confirm Request බොත්තම එබුවම
+
         btnConfirmRequest.setOnClickListener {
             val requestedQty = etRequestQty.text.toString().trim()
 
@@ -80,12 +80,12 @@ class BeneDonationDetailsActivity : AppCompatActivity() {
             if (donationId.isNotEmpty()) {
                 val dbRef = FirebaseDatabase.getInstance().getReference("Donations").child(donationId)
 
-                // ඩේටාබේස් එකේ Status එක "Requested" කියලා අප්ඩේට් කරනවා
+
                 dbRef.child("status").setValue("Requested")
                     .addOnCompleteListener {
                         Toast.makeText(this, "Donation Requested Successfully!", Toast.LENGTH_LONG).show()
 
-                        // කෑම එක ඉල්ලුවට පස්සේ කෙලින්ම එයාලගේ "My Claimed Donations" පිටුවට යවනවා
+
                         startActivity(Intent(this, BeneMyClaimedDonationActivity::class.java))
                         finish()
                     }

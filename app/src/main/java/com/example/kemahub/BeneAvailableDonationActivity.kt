@@ -40,7 +40,7 @@ class BeneAvailableDonationActivity : AppCompatActivity() {
             finish()
         }
 
-        // RecyclerView Setup (ඔයාගේ ඩිසයින් එකේ වගේම තීරු 2කට පෙන්නනවා)
+
         rvAvailableDonations = findViewById(R.id.rvAvailableDonations)
         rvAvailableDonations.layoutManager = GridLayoutManager(this, 2)
 
@@ -61,7 +61,7 @@ class BeneAvailableDonationActivity : AppCompatActivity() {
                     for (donationSnap in snapshot.children) {
                         val donation = donationSnap.getValue(DonationModel::class.java)
 
-                        // "Available" ඒවා විතරක් පෙන්නනවා!
+
                         if (donation != null && donation.status == "Available") {
                             donationList.add(donation)
                         }

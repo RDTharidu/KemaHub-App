@@ -15,7 +15,7 @@ class BeneficiarySignupActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup) // ඩිසයින් එකට Signup එකම පාවිච්චි කරනවා
+        setContentView(R.layout.activity_signup)
 
         auth = FirebaseAuth.getInstance()
 
@@ -48,7 +48,7 @@ class BeneficiarySignupActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         val userId = auth.currentUser?.uid
                         if (userId != null) {
-                            // 🔴 මැජික් එක: ඩේටාබේස් එකේ "Beneficiary" කියලා සේව් කරනවා
+
                             val userMap = hashMapOf(
                                 "name" to name,
                                 "email" to email,

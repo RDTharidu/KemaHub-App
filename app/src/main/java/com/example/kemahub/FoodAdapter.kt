@@ -30,12 +30,12 @@ class FoodAdapter(private val foodList: List<FoodItem>) : RecyclerView.Adapter<F
         holder.tvDesc.text = food.description
         holder.tvQty.text = "Quantity: ${food.quantity}"
 
-        // Request බොත්තම එබුවම වෙන දේ
+
         holder.btnRequest.setOnClickListener {
-            // අදාළ ID එකෙන් Database එකට යනවා
+
             val dbRef = FirebaseDatabase.getInstance().getReference("Donations").child(food.id)
 
-            // Status එක Requested කියලා වෙනස් කරනවා
+
             dbRef.child("status").setValue("Requested")
                 .addOnSuccessListener {
                     Toast.makeText(holder.itemView.context, "${food.name} Requested successfully!", Toast.LENGTH_SHORT).show()

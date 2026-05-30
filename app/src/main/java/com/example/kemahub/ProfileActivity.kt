@@ -13,18 +13,18 @@ class ProfileActivity : AppCompatActivity() {
 
         findViewById<ImageView>(R.id.btnBack)?.setOnClickListener { finish() }
 
-        // මැද තියෙන Donation History බොත්තම
+
         findViewById<TextView>(R.id.btnDonationHistory)?.setOnClickListener {
             startActivity(Intent(this, DonationHistoryActivity::class.java))
         }
 
-        // Bottom Navigation බොත්තම්
+
         findViewById<ImageView>(R.id.navHome)?.setOnClickListener {
             startActivity(Intent(this, DonorDashboardActivity::class.java))
             finish()
         }
 
-        // අලුතින් දැම්මේ - History එකට යන්න
+
         findViewById<ImageView>(R.id.navHistory)?.setOnClickListener {
             startActivity(Intent(this, DonationHistoryActivity::class.java))
             finish()
@@ -40,7 +40,7 @@ class ProfileActivity : AppCompatActivity() {
             finish()
         }
 
-        // අලුතින් දැම්මේ - මැද තියෙන (+) බොත්තමෙන් Add Donation එකට යන්න
+
         findViewById<ImageView>(R.id.fabAddDonation)?.setOnClickListener {
             startActivity(Intent(this, AddDonationActivity::class.java))
         }

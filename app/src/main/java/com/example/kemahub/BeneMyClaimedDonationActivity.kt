@@ -32,7 +32,7 @@ class BeneMyClaimedDonationActivity : AppCompatActivity() {
             finish()
         }
         findViewById<ImageView>(R.id.navHistory)?.setOnClickListener {
-            // දැනටමත් ඉන්නේ මේ පිටුවේ නිසා මුකුත් කරන්නේ නෑ, නැත්නම් Refresh කරන්න පුළුවන්
+
         }
         findViewById<ImageView>(R.id.navNotifications)?.setOnClickListener {
             startActivity(Intent(this, BeneNotificationsActivity::class.java))
@@ -43,7 +43,7 @@ class BeneMyClaimedDonationActivity : AppCompatActivity() {
             finish()
         }
 
-        // Setup RecyclerView (මේක තීරු 2ක් නෙමෙයි, සම්පූර්ණ පළලට පේන්න ඕන නිසා LinearLayoutManager පාවිච්චි කරන්නේ)
+
         rvBeneClaimedDonations = findViewById(R.id.rvBeneClaimedDonations)
         rvBeneClaimedDonations.layoutManager = LinearLayoutManager(this)
 
@@ -63,7 +63,7 @@ class BeneMyClaimedDonationActivity : AppCompatActivity() {
                     for (donationSnap in snapshot.children) {
                         val donation = donationSnap.getValue(DonationModel::class.java)
 
-                        // කවුරුහරි Request කරපු ඒවා පෙන්වනවා (status == "Requested")
+
                         if (donation != null && donation.status == "Requested") {
                             donationList.add(donation)
                         }
